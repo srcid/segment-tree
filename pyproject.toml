@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "segment-tree"
+version = "0.1.0"
+description = ""
+authors = ["Alcides Ribeiro <alcidesribeirosampaioneto@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.7.0"
+rich = "^13.7.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-cov = "^5.0.0"
+taskipy = "^1.12.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "-vv -x --cov=segment_tree"
+
+[tool.taskipy.tasks]
+test = "pytest"
+post_test = "coverage html"
