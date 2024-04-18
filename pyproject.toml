@@ -21,10 +21,9 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 pythonpath = "."
-addopts = "-vv -x --cov=segment_tree"
 
 [tool.taskipy.tasks]
-test = "pytest"
+test = "pytest -vv -s -x --cov=segment_tree"
 post_test = "coverage html"
 
 [tool.isort]
