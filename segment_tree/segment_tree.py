@@ -8,7 +8,7 @@ from segment_tree.node import Node
 
 class SegmentTree:
     def __init__(self, arr: list) -> None:
-        self.root = Node(arr, Interval(0, len(arr)))
+        self.root = Node.fromArr(arr, Interval(0, len(arr)))
 
     def asTree(self) -> str:
         tree = Tree(f"{self.root.key} {self.root.interval}")

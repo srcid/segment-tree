@@ -1,21 +1,17 @@
+from __future__ import annotations
+
+from typing import NamedTuple, Optional
+
 from rich.tree import Tree
 
 from segment_tree.interval import Interval
 
 
-class Node:
-    def __init__(self, arr: list, interval: Interval) -> None:
-        if interval.dif() == 1:
-            self.key = arr[interval.start]
-            self.left = None
-            self.right = None
-        else:
-            MID = interval.mid()
-            self.left = Node(arr, interval.copyWith(end=MID))
-            self.right = Node(arr, interval.copyWith(start=MID))
-            self.key = self.left.key + self.right.key
-
-        self.interval = interval
+class Node(NamedTuple):
+    key: int
+    interval: Interval
+    left: Optional[Node] = None
+    right: Optional[Node] = None
 
     def isLeaf(self) -> bool:
         return (self.left, self.right) == (None, None)
@@ -31,3 +27,15 @@ class Node:
         self.right.asTree(rightSubTree)
 
         return tree
+
+    @classmethod
+    def fromArr(cls, arr: list, interval: Interval) -> None:
+        if interval.dif() == 1:
+            return cls(arr[interval.start], interval)
+
+        MID = interval.mid()
+        left = Node.fromArr(arr, interval.copyWith(end=MID))
+        right = Node.fromArr(arr, interval.copyWith(start=MID))
+        key = left.key + right.key
+
+        return cls(key, interval, left, right)
