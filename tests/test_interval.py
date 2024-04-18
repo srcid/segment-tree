@@ -28,6 +28,9 @@ def test_interval_copywith_start_2(interval: Interval):
 def test_interval_copywith_end_5(interval: Interval):
     assert Interval(3, 5) == interval.copyWith(end=5)
 
+def test_interval_copywith_start_0(interval: Interval):
+    assert Interval(0, 6) == interval.copyWith(start=0)
+
 def test_interval_dif(interval: Interval):
     assert interval.dif() == 3
 
