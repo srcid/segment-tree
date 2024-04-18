@@ -1,5 +1,3 @@
-from time import sleep
-
 from rich.tree import Tree
 
 from segment_tree.interval import Interval
