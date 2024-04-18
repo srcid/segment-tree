@@ -34,5 +34,5 @@ class SegmentTree:
             interval.copyWith(start=MID), node.right
         )
 
-    def insert(e):
-        pass
+    def insert():
+        raise NotImplementedError("This mothod was not implemented")
