@@ -1,6 +1,5 @@
 from time import sleep
 from rich.tree import Tree
-from rich import print
 
 from segment_tree.interval import Interval
 from segment_tree.node import Node
@@ -37,11 +36,3 @@ class SegmentTree:
 
     def insert(e):
         pass
-    
-    
-if __name__ == '__main__':
-    #      0, 1, 2, 3, 4, 5, 6
-    arr = [1, 3, 5, 7, 9, 11]
-    sgt = SegmentTree(arr)
-
-    print(sgt.asTree())
