@@ -22,8 +22,11 @@ class Interval():
     def mid(self) -> int:
         return 1 + self.start + (self.end - self.start - 1) // 2
 
-    def copyWith(self, *, start = None, end = None) -> Interval:
-        return Interval(start or self.start, end or self.end)
+    def copyWith(self, *, start: int = None, end: int = None) -> Interval:
+        return Interval(
+            start if start != None else self.start, 
+            end if end != None else self.end
+        )
 
     def __eq__(self, interval) -> bool:
         return self.start == interval.start and self.end == interval.end
