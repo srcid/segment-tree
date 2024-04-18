@@ -25,5 +25,5 @@ class Interval():
     def copyWith(self, *, start = None, end = None) -> Interval:
         return Interval(start or self.start, end or self.end)
 
-    def __eq__(self, range) -> bool:
-        return self.start == range.start and self.end == range.end
+    def __eq__(self, interval) -> bool:
+        return self.start == interval.start and self.end == interval.end
