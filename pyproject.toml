@@ -26,3 +26,6 @@ addopts = "-vv -x --cov=segment_tree"
 [tool.taskipy.tasks]
 test = "pytest"
 post_test = "coverage html"
+
+[tool.isort]
+profile = "black"
