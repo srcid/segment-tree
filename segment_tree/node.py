@@ -4,7 +4,7 @@ from segment_tree.interval import Interval
 
 
 class Node:
-    def __init__(self, arr: list, interval: Interval) -> None:      
+    def __init__(self, arr: list, interval: Interval) -> None:
         if interval.dif() == 1:
             self.key = arr[interval.start]
             self.left = None
@@ -26,8 +26,8 @@ class Node:
 
         leftSubTree = tree.add(f"{self.left.key} {self.left.interval}")
         rightSubTree = tree.add(f"{self.right.key} {self.right.interval}")
-        
+
         self.left.asTree(leftSubTree)
         self.right.asTree(rightSubTree)
-        
+
         return tree
