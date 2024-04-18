@@ -33,4 +33,4 @@ class SegmentTree:
         )
 
     def insert():
-        raise NotImplementedError("This mothod was not implemented")
+        raise NotImplementedError("This method was not implemented")
