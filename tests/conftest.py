@@ -1,6 +1,8 @@
 import pytest
+
 from segment_tree.interval import Interval
 from segment_tree.segment_tree import SegmentTree
+
 
 @pytest.fixture
 def interval():

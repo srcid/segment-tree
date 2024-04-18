@@ -5,7 +5,9 @@
 # 1 + start + (end - start - 1) // 2 
 
 from __future__ import annotations
+
 from typing import NamedTuple
+
 
 class Interval(NamedTuple):
     start: int

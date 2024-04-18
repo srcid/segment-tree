@@ -1,5 +1,7 @@
-from segment_tree.interval import Interval
 from rich.tree import Tree
+
+from segment_tree.interval import Interval
+
 
 class Node:
     def __init__(self, arr: list, interval: Interval) -> None:      

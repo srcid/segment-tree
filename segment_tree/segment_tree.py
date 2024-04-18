@@ -1,8 +1,10 @@
 from time import sleep
+
 from rich.tree import Tree
 
 from segment_tree.interval import Interval
 from segment_tree.node import Node
+
 
 class SegmentTree:
     def __init__(self, arr) -> None:
