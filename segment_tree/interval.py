@@ -5,11 +5,9 @@
 # 1 + start + (end - start - 1) // 2 
 
 from __future__ import annotations
-from pydantic.dataclasses import dataclass
+from typing import NamedTuple
 
-
-@dataclass
-class Interval():
+class Interval(NamedTuple):
     start: int
     end: int
 
@@ -27,6 +25,3 @@ class Interval():
             start if start != None else self.start, 
             end if end != None else self.end
         )
-
-    def __eq__(self, interval) -> bool:
-        return self.start == interval.start and self.end == interval.end
